@@ -9,7 +9,7 @@ function LoginReport() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data: res } = await API.get("/attendance/login-report");
+        const { data: res } = await API.get("https://eams-zfwj.onrender.com/api/attendance/login-report");
         setData(res);
       } catch (err) {
         console.error(err);
