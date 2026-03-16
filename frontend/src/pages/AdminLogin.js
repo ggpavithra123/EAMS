@@ -15,7 +15,7 @@ function AdminLogin() {
     e.preventDefault();
     setLoading(true);
     try {
-      const { data } = await API.post("/admin/login", form);
+      const { data } = await API.post("https://eams-zfwj.onrender.com/admin/login", form);
       localStorage.setItem("token", data.token);
       localStorage.setItem("role", "admin");
       localStorage.setItem("user", JSON.stringify(data.admin));
