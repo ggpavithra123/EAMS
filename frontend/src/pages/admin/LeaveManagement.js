@@ -15,7 +15,7 @@ function LeaveManagement() {
 
   const fetchRequests = async () => {
     try {
-      const { data: response } = await API.get("/admin/leave-requests");
+      const { data: response } = await API.get("https://eams-zfwj.onrender.com/api/admin/leave-requests");
       setData(response);
     } catch (error) {
       toast.error("Failed to load leave requests");
