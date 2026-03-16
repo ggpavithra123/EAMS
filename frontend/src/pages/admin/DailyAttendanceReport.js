@@ -11,7 +11,7 @@ function DailyAttendanceReport() {
   const fetchReport = async (date) => {
     setLoading(true);
     try {
-      const { data } = await API.get(`/attendance/daily?date=${date}`);
+      const { data } = await API.get(`https://eams-zfwj.onrender.com/api/attendance/daily?date=${date}`);
       setRecords(data.records);
     } catch (err) {
       console.error(err);
