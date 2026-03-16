@@ -1,0 +1,11 @@
+{
+  "name": "eams-root",
+  "version": "1.0.0",
+  "description": "Employee Attendance Management System - MERN Stack",
+  "scripts": {
+    "install-all": "cd backend && npm install && cd ../frontend && npm install",
+    "start-backend": "cd backend && npm run dev",
+    "start-frontend": "cd frontend && npm start",
+    "seed-admin": "cd backend && node seed.js"
+  }
+}

@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Clean and reinstall frontend deps",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"if exist node_modules rmdir /s /q node_modules && if exist package-lock.json del /f /q package-lock.json && npm install"
+			],
+			"isBackground": false
+		}
+	]
+}

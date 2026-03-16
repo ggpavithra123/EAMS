@@ -1,0 +1,56 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Reinstall frontend packages",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"cd frontend && if exist node_modules rmdir /s /q node_modules && if exist package-lock.json del /f /q package-lock.json && npm install"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "Reinstall frontend packages",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"cd frontend && if exist node_modules rmdir /s /q node_modules && if exist package-lock.json del /f /q package-lock.json && npm install"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "Run backend dev server",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"start-backend"
+			],
+			"isBackground": true
+		},
+		{
+			"label": "Run frontend dev server",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"start-frontend"
+			],
+			"isBackground": true
+		},
+		{
+			"label": "Admin login probe",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"$body = '{\"username\":\"admin\",\"password\":\"admin123\"}'; Invoke-RestMethod -Uri 'http://localhost:8000/api/admin/login' -Method Post -ContentType 'application/json' -Body $body | ConvertTo-Json -Depth 10"
+			],
+			"isBackground": false
+		}
+	]
+}

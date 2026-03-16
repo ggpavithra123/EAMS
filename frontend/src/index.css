@@ -1,0 +1,222 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: none;
+}
+
+.card-header {
+  border-radius: 12px 12px 0 0 !important;
+  font-weight: 600;
+}
+
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.table th {
+  font-weight: 600;
+  background-color: #f8f9fa;
+}
+
+.badge {
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.stat-card {
+  border-left: 4px solid;
+  transition: transform 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.landing-hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a237e 0%, #0d47a1 50%, #1565c0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-card {
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+}
+
+.landing-title {
+  color: #1a237e;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.landing-subtitle {
+  color: #555;
+  font-size: 1rem;
+}
+
+.btn-login-admin {
+  background: linear-gradient(135deg, #1a237e, #0d47a1);
+  border: none;
+  color: white;
+  padding: 14px;
+  font-size: 1.1rem;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: opacity 0.2s;
+}
+.btn-login-admin:hover { opacity: 0.9; color: white; }
+
+.btn-login-employee {
+  background: linear-gradient(135deg, #00695c, #00897b);
+  border: none;
+  color: white;
+  padding: 14px;
+  font-size: 1.1rem;
+  width: 100%;
+  border-radius: 10px;
+  transition: opacity 0.2s;
+}
+.btn-login-employee:hover { opacity: 0.9; color: white; }
+
+.sidebar {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1a237e 0%, #283593 100%);
+  width: 240px;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.sidebar .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 2px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.sidebar .nav-link i {
+  font-size: 1.1rem;
+  width: 20px;
+}
+
+.sidebar-brand {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 10px 20px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 10px;
+}
+
+.main-content {
+  margin-left: 240px;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.top-bar {
+  background: white;
+  border-radius: 10px;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.online-badge {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.clock-display {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a237e;
+}
+
+.attendance-status-card {
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.status-clocked-in { background: linear-gradient(135deg, #1b5e20, #2e7d32); }
+.status-clocked-out { background: linear-gradient(135deg, #b71c1c, #c62828); }
+.status-not-started { background: linear-gradient(135deg, #01579b, #0277bd); }
+.status-on-leave { background: linear-gradient(135deg, #ef6c00, #fb8c00); }
+
+.export-btn { margin-left: 10px; }
+
+.leave-card {
+  border: 1px solid rgba(46, 125, 50, 0.12);
+}
+
+.leave-card-header {
+  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+  color: #1b5e20;
+}
+
+.leave-balance-banner {
+  background: #f8faf8;
+  border: 1px solid #e2efe3;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+@media (max-width: 768px) {
+  .sidebar { width: 60px; }
+  .sidebar .nav-link span { display: none; }
+  .sidebar-brand span { display: none; }
+  .main-content { margin-left: 60px; }
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
