@@ -27,7 +27,7 @@ function EmployeeMaintenance() {
 
   const fetchEmployees = async () => {
     try {
-      const { data } = await API.get("/employees");
+      const { data } = await API.get("https://eams-zfwj.onrender.com/api/employees");
       setEmployees(data);
     } catch (err) {
       toast.error("Failed to load employees");
