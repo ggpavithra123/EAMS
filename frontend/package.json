@@ -19,7 +19,8 @@
   "scripts": {
     "prestart": "node -e \"const m=Number(process.versions.node.split('.')[0]);if(m>=22){console.warn('Warning: Node 22 may be unstable with react-scripts 5. Prefer Node 20 if available.')}\"",
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "vercel-build": "npm install && npm run build"
   },
   "proxy": "https://eams-zfwj.onrender.com",
   "browserslist": {
