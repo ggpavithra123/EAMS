@@ -10,7 +10,7 @@ const app = express();
 // ✅ Correct CORS configuration
 app.use(
   cors({
-    origin: "http://localhost:3001",
+    origin: "https://eams-65rs.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
