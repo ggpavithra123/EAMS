@@ -26,7 +26,7 @@ function EmployeeDashboard() {
 
   const fetchTodayStatus = useCallback(async () => {
     try {
-      const { data } = await API.get("/attendance/today-status");
+      const { data } = await API.get("https://eams-zfwj.onrender.com/api/attendance/today-status");
       setTodayStatus(data);
     } catch (err) {
       console.error(err);
@@ -35,7 +35,7 @@ function EmployeeDashboard() {
 
   const fetchHistory = useCallback(async () => {
     try {
-      const { data } = await API.get("/attendance/my");
+      const { data } = await API.get("https://eams-zfwj.onrender.com/api/attendance/my");
       setHistory(data);
     } catch (err) {
       console.error(err);
@@ -44,7 +44,7 @@ function EmployeeDashboard() {
 
   const fetchLeaveData = useCallback(async () => {
     try {
-      const { data } = await API.get("/employees/leave-requests/my");
+      const { data } = await API.get("https://eams-zfwj.onrender.com/api/employees/leave-requests/my");
       setLeaveData(data);
       setEmployee((currentEmployee) => {
         const nextEmployee = {
@@ -71,7 +71,7 @@ function EmployeeDashboard() {
   const handleTimeIn = async () => {
     setActionLoading(true);
     try {
-      const { data } = await API.post("/attendance/time-in");
+      const { data } = await API.post("https://eams-zfwj.onrender.com/api/attendance/time-in");
       toast.success(data.message + (data.is_late ? " (You are late)" : ""));
       await fetchTodayStatus();
       await fetchHistory();
@@ -85,7 +85,7 @@ function EmployeeDashboard() {
   const handleTimeOut = async () => {
     setActionLoading(true);
     try {
-      const { data } = await API.post("/attendance/time-out");
+      const { data } = await API.post("https://eams-zfwj.onrender.com/api/attendance/time-out");
       toast.success(`${data.message} — Worked ${data.work_hours}h`);
       await fetchTodayStatus();
       await fetchHistory();
@@ -112,7 +112,7 @@ function EmployeeDashboard() {
     event.preventDefault();
     setLeaveSubmitting(true);
     try {
-      const { data } = await API.post("/employees/leave-requests", leaveForm);
+      const { data } = await API.post("https://eams-zfwj.onrender.com/api/employees/leave-requests", leaveForm);
       toast.success(data.message);
       setLeaveForm({
         leave_date: new Date().toISOString().split("T")[0],
