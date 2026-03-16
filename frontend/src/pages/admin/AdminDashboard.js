@@ -15,8 +15,8 @@ function AdminDashboard() {
     const fetchData = async () => {
       try {
         const [loginRes, empRes] = await Promise.all([
-          API.get("/attendance/login-report"),
-          API.get("/employees"),
+          API.get("https://eams-zfwj.onrender.com/api/attendance/login-report"),
+          API.get("https://eams-zfwj.onrender.com/api/employees"),
         ]);
         setStats({
           online_count: loginRes.data.online_count,
