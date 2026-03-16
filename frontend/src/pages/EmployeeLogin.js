@@ -15,7 +15,7 @@ function EmployeeLogin() {
     e.preventDefault();
     setLoading(true);
     try {
-      const { data } = await API.post("https://eams-zfwj.onrender.com/employees/login", form);
+      const { data } = await API.post("https://eams-zfwj.onrender.com/api/employees/login", form);
       localStorage.setItem("token", data.token);
       localStorage.setItem("role", "employee");
       localStorage.setItem("user", JSON.stringify(data.employee));
