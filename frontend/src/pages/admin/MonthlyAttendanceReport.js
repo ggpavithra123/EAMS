@@ -16,7 +16,7 @@ function MonthlyAttendanceReport() {
     setLoading(true);
     try {
       const { data } = await API.get(
-        `/attendance/monthly?month=${month}&year=${year}`,
+        `https://eams-zfwj.onrender.com/api/attendance/monthly?month=${month}&year=${year}`,
       );
       setRecords(data.records);
 
